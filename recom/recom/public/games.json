@@ -1,0 +1,21 @@
+{
+  "games": [
+    {
+      "name": "call of duty",
+      "tags": [
+        "fps",
+        "shooter"
+      ],
+      "genre": "shooter"
+    },
+    {
+      "name": "fifa 15",
+      "tags": [
+        "simulation",
+        "footbal",
+        "sport"
+      ],
+      "genre": "sports"
+    }
+  ]
+}

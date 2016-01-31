@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900,300);
+* { margin: 0; padding: 0; outline: 0; }
+
+html {
+  	box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body { font-family: Arial, Helvetica, Sans-Serif; }
+h1,h2,h3,h4 {
+	font-family: 'Roboto', sans-serif;
+
+}
+
+
+aside { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #c0392b;
+	height: 100%; 
+	overflow: hidden; 
+	width: 25%;
+
+	.logo{
+		background-color: darken(#c0392b, 10%);
+		background-image: url(../img/logo.png);
+		background-repeat: no-repeat;
+		background-position: 26px 24px;
+		display: block;
+		text-decoration: none;
+		padding: 20px 20px 20px 90px;
+		color: white;
+		font-size: 22px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		line-height: 28px;
+		letter-spacing: 0.05em;
+
+		&:hover {
+			background-color: darken(#c0392b, 30%);
+		}
+	}
+	nav {
+
+		a {
+			display: block;
+			padding: 5px 30px;
+			text-decoration: none;
+			color: white;
+			margin: 2px 0;
+
+			&:hover {
+				background: black;
+			}
+		}
+	}
+}
+#content {
+	width: 75%;
+	margin-left: 25%; 
+	padding: 10px;
+
+
+	#search {
+		width: 100%;
+		float: left;
+		display: block;
+		padding: 10px;
+		font-size: 24px;
+
+	}
+
+	section.game-card {
+		border: 2px solid #fff;
+		border-color: #c0392b;
+		padding: 10px;
+		float: left;
+		margin: 5px;
+		width: 25%;
+		h2 {
+			text-transform: capitalize;
+			font-size: 22px;
+		}
+		img{
+			margin: 0 0 5px 0;
+			width: 100%;
+			min-height: 250px;
+			border:1px solid grey;
+		}
+
+
+	}
+
+}
