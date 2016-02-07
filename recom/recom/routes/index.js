@@ -32,11 +32,14 @@
   window.route = {
     home: function (ctx, next) {
       get('views/home.html', function (html) {
-        get('public/users.json', function (content) {
-          ctx.data.users = JSON.parse(content);
+        get('/recom/public/games.json', function (content) {
+          ctx.data.games = JSON.parse(content).games;
         });
         ctx.data.index = 0;
         ctx.recom.content = html;
+        $('.carousel').carousel({
+          interval: 100
+        });
         next();
       });
     },
@@ -87,3 +90,4 @@
 
   window.done = null;
 }());
+
