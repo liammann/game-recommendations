@@ -1,3 +1,3 @@
 # game-recommendations
 
-'node recom' to run 
+`node recom` to run 
