@@ -1,0 +1,23 @@
+<h1>My Orders</h1>
+
+
+<table class="orders">
+<tr>
+<th>#</th>
+<th>Games</th>
+<th>Price</th>
+<th width="150">Date</th>
+</tr>
+{{#orders}} 
+<tr>
+	<td>{{orderId}}</td>
+	<td>
+	{{#games}}
+		<img src="/l/public/gameImg/cover-{{.}}.png" />
+	{{/games}}
+	</td>
+	<td>£{{orderPrice}}</td>
+	<td>{{orderDate}}</td>
+</tr>
+{{/orders}}
+</table>

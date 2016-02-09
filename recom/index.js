@@ -49,7 +49,7 @@ app.get(/^\/(mocha|chai)\.(css|js)$/i, function(req, res){
  */
 
 app.get('/', function(req, res){
-  res.render('list', { recom: recom });
+  res.redirect('/l');
 });
 
 /**
@@ -84,5 +84,5 @@ app.get('/:recom/*', function(req, res){
   res.sendFile(join(__dirname, name, 'index.html'));
 });
 
-app.listen(4000);
-console.log('recom server listening on port 4000');
+app.listen(5000);
+console.log('client server listening on port 5000');

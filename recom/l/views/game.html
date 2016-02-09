@@ -1,0 +1,14 @@
+<img src="/l/public/gameImg/slide-{{game.gameId}}.png" width="100%"/>
+<p class="stars"><img src="/l/public/gameImg/stars-{{game.averageRating}}.png"/></p>
+
+<h2>{{game.gameName}}</h2>
+<div class="tags-genre">
+<p>Genre: <span>{{game.genre}}</span></p> | 
+<p>Tags: {{#game.tags}} 
+<span>{{.}}</span>, 
+{{/game.tags}}
+</p>
+</div>
+
+<p>Release Date: {{game.releaseDate}}</p>
+

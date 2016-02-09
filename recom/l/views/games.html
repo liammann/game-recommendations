@@ -1,0 +1,9 @@
+<h1>All Games</h1>
+{{#games}} 
+	<a class="game-card" href="game/{{gameId}}">
+	<img src="/l/public/gameImg/cover-{{gameId}}.png" />
+	<h2>{{gameName}}</h2>
+<p class="stars-small"><img src="/l/public/gameImg/stars-{{averageRating}}.png"/></p>
+
+	</a>
+{{/games}}

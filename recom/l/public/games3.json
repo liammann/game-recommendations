@@ -1,0 +1,67 @@
+{
+  "games": [
+    {
+      "tags": [
+        "fps",
+        "action",
+        "shooter",
+        "multiplayer"
+      ],
+      "releaseDate": 1320451200,
+      "purchaseCount": 6666,
+      "preorderCount": 5124,
+      "genre": "action",
+      "gameName": "Call of Duty: Modern Warfare 2",
+      "gameId": 1,
+      "averageRating": 3.3
+    },
+    {
+      "tags": [
+        "adventure",
+        "action",
+        "open world",
+        "multiplayer",
+        "shooter"
+      ],
+      "releaseDate": 1428969600,
+      "purchaseCount": 11005,
+      "preorderCount": 5543,
+      "genre": "adventure",
+      "gameName": "Grand Theft Auto V",
+      "gameId": 4,
+      "averageRating": 4.7
+    },
+    {
+      "tags": [
+        "racing",
+        "open world",
+        "action",
+        "multiplayer",
+        "driving"
+      ],
+      "releaseDate": 1226966400,
+      "purchaseCount": 1421,
+      "preorderCount": 0,
+      "genre": "racing",
+      "gameName": "Need for Speed Undercover",
+      "gameId": 12,
+      "averageRating": 4.8
+    },
+    {
+      "tags": [
+        "simulation",
+        "casual",
+        "singleplayer",
+        "sandbox",
+        "building"
+      ],
+      "releaseDate": 1243900800,
+      "purchaseCount": 6642,
+      "preorderCount": 1241,
+      "genre": "simulation",
+      "gameName": "The Sims 3",
+      "gameId": 23,
+      "averageRating": 2.7
+    }
+  ]
+}

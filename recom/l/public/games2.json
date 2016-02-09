@@ -1,0 +1,25 @@
+{
+  "games": [
+{"tags":["racing","simulation","multiplayer","driving","offroad"],"releaseDate":1449446400,"purchaseCount":8854,"preorderCount":845,"genre":"racing","gameName":"DiRT Rally","gameId":9,"averageRating":0.9},
+   {"tags":["adventure","action","lara croft","survival"],"releaseDate":1453939200,"purchaseCount":4512,"preorderCount":1500,"genre":"adventure","gameName":"Rise of the Tomb Raider","gameId":3,"averageRating":3.1},
+   {"tags":["MMO","survival","dinosaurs","open world","multiplayer","building"],"releaseDate":1433203200,"purchaseCount":7513,"preorderCount":999,"genre":"MMO","gameName":"ARK: Survival Evolved","gameId":6,"averageRating":3.8},
+    {
+      "tags": [
+        "RPG",
+        "adventure",
+        "fantasy",
+        "action",
+        "open world",
+        "dragons",
+        "singleplayer"
+      ],
+      "releaseDate": 1320969600,
+      "purchaseCount": 12349,
+      "preorderCount": 3142,
+      "genre": "RPG",
+      "gameName": "The Elder Scrolls V: Skyrim",
+      "gameId": 15,
+      "averageRating": 3.9
+    }
+  ]
+}

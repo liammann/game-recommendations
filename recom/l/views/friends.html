@@ -1,0 +1,12 @@
+<h2>My Friends</h2>
+<table class="orders"> 
+<tr>
+	<th width="120"></th>
+	<th>Username</th>
+</th>
+{{#friends.userFriends}} 
+<tr>
+<td><img src="/l/public/gameImg/profile-{{.}}.png" height="45"/></td>
+<td>User_{{.}}</td>
+</tr>
+{{/friends.userFriends}}
