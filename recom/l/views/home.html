@@ -41,13 +41,39 @@
 
 <section class="new-releases pop">
 <h2>Most Popular</h2>
-{{#popular}} 
+<nav>
+  <a href="javascript:;" class="selected" id="day-btn">Day</a>
+  <a href="javascript:;" id="month-btn">Month</a>
+  <a href="javascript:;" id="year-btn">Year</a>
+</nav>
+
+<div id="day" class="show">
+{{#popular.day}} 
   <a class="game-card" href="game/{{gameId}}">
   <img src="/l/public/gameImg/cover-{{gameId}}.png" height="100"/>
   <h2>{{gameName}}</h2>
     <p class="stars-small"><img src="/l/public/gameImg/stars-{{averageRating}}.png"/></p>
 </a>
-{{/popular}}
+{{/popular.day}}
+</div>
+<div id="month">
+{{#popular.month}} 
+  <a class="game-card" href="game/{{gameId}}">
+  <img src="/l/public/gameImg/cover-{{gameId}}.png" height="100"/>
+  <h2>{{gameName}}</h2>
+    <p class="stars-small"><img src="/l/public/gameImg/stars-{{averageRating}}.png"/></p>
+</a>
+{{/popular.month}}
+</div>
+<div id="year">
+{{#popular.year}} 
+  <a class="game-card" href="game/{{gameId}}">
+  <img src="/l/public/gameImg/cover-{{gameId}}.png" height="100"/>
+  <h2>{{gameName}}</h2>
+    <p class="stars-small"><img src="/l/public/gameImg/stars-{{averageRating}}.png"/></p>
+</a>
+{{/popular.year}}
+</div>
 </section>
 
 <section class="new-releases top">

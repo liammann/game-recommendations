@@ -192,6 +192,39 @@ aside {
 		font-size: 24px;
 
 	}
+	.pop {
+		> div {
+			display: none;
+		}
+		> div.show {
+			display: block;
+		}
+		h2 {
+				display: inline-block;
+		}
+		nav {
+			display: inline-block;
+			overflow: hidden;
+			padding: 10px 10px 0 20px;
+			a {
+				display: inline-block;
+				padding: 4px 7px;
+				color: #999;
+				border-radius: 4px;
+				&:hover{
+					color:white;
+					background: black;
+					text-decoration: none;
+				}
+				&.selected {
+					border: 1px solid darken(rgba(192,57,43,0.95), 10%);
+					background: darken(rgba(192,57,43,0.95), 1%);
+					color: white;
+				}
+			}
+		}
+
+	}
 
 	a.game-card {
 		border: 1px solid darken(rgba(192,57,43,0.35), 1%);

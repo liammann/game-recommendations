@@ -44,6 +44,7 @@ return;
 
       ctx.data = {};
       ctx.recom = {};
+      ctx.home = false;
       next();
     }
 
@@ -54,17 +55,37 @@ return;
     home: function (ctx, next) {
       get('/l/public/games2.json', function (content) {
           ctx.data.games = JSON.parse(content).games;
-                    ctx.data.games.forEach(function (element, index) {
+             ctx.data.games.forEach(function (element, index) {
             ctx.data.games[index].averageRating = Math.floor(ctx.data.games[index].averageRating);
           }, ctx);
       });
-      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular'+ctx.userID, function (content) {
-          ctx.data.popular = JSON.parse(content).games;
-                    ctx.data.popular.forEach(function (element, index) {
-            ctx.data.popular[index].averageRating = Math.floor(ctx.data.popular[index].averageRating);
+      ctx.data.popular = {};
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_month'+ctx.userID, function (content) {
+//      get('/l/public/games4.json', function (content) {
+          ctx.data.popular.month = JSON.parse(content).games;
+          ctx.data.popular.month.forEach(function (element, index) {
+            ctx.data.popular.month[index].averageRating = Math.floor(ctx.data.popular.month[index].averageRating);
           }, ctx);
       });
-      get('/l/public/games4.json', function (content) {
+
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_year'+ctx.userID, function (content) {
+//      get('/l/public/games3.json', function (content) {
+          ctx.data.popular.year = JSON.parse(content).games;
+          ctx.data.popular.year.forEach(function (element, index) {
+            ctx.data.popular.year[index].averageRating = Math.floor(ctx.data.popular.year[index].averageRating);
+          }, ctx);
+      });
+
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_day'+ctx.userID, function (content) {
+//      get('/l/public/games2.json', function (content) {
+          ctx.data.popular.day = JSON.parse(content).games;
+          ctx.data.popular.day.forEach(function (element, index) {
+            ctx.data.popular.day[index].averageRating = Math.floor(ctx.data.popular.day[index].averageRating);
+          }, ctx);
+      });
+
+      get('http://localhost:4000/api/v1/games/recommendations?type=top_rated'+ctx.userID, function (content) {
+//      get('/l/public/games4.json', function (content) {
           ctx.data.top = JSON.parse(content).games;
                     ctx.data.top.forEach(function (element, index) {
             ctx.data.top[index].averageRating = Math.floor(ctx.data.top[index].averageRating);
@@ -76,6 +97,7 @@ return;
         $('.carousel').carousel({
           interval: 100
         });
+        ctx.home = true;
         next();
       });
     },
@@ -96,7 +118,9 @@ return;
       });
     },
     game: function (ctx, next) {
-      get('/l/public/game1.json', function (content) {
+
+      get('http://localhost:4000/api/v1/games/'+ctx.params.name, function (content) {
+//      get('/l/public/game1.json', function (content) {
         ctx.data.game = JSON.parse(content).game;
         ctx.data.game.averageRating = Math.floor(ctx.data.game.averageRating);
         ctx.data.game.releaseDate = new Date(ctx.data.game.releaseDate).toDateString();
@@ -141,6 +165,30 @@ return;
 
         $('#content').empty().append(content);
         changeActive(ctx.data.index);
+
+     if(ctx.home){
+       document.getElementById("day-btn").addEventListener("click", (function(){
+          $(this).parent().find('a').removeClass("selected");
+          $(this).addClass("selected")
+          $("section.pop > div").removeClass("show");
+          $("section.pop > div#day").addClass("show");
+        }), false);
+       document.getElementById("month-btn").addEventListener("click", (function(){
+          $(this).parent().find('a').removeClass("selected");
+          $(this).addClass("selected")
+          $("section.pop > div").removeClass("show");
+          $("section.pop > div#month").addClass("show");
+        }), false);
+       document.getElementById("year-btn").addEventListener("click", (function(){
+          $(this).parent().find('a').removeClass("selected");
+          $(this).addClass("selected")
+          $("section.pop > div").removeClass("show");
+          $("section.pop > div#year").addClass("show");
+        }), false);
+
+
+
+      }
         if (typeof done === 'function') done(ctx.data.index);
       });
       if(localStorage.getItem("userID") !== "none" ){
@@ -152,6 +200,9 @@ return;
         location.reload();
 
       }), false);
+
+       
+
     }
   };
 

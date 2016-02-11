@@ -176,6 +176,36 @@ aside nav a:focus {
   padding: 10px;
   font-size: 24px;
 }
+#content .pop > div {
+  display: none;
+}
+#content .pop > div.show {
+  display: block;
+}
+#content .pop h2 {
+  display: inline-block;
+}
+#content .pop nav {
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 10px 0 20px;
+}
+#content .pop nav a {
+  display: inline-block;
+  padding: 4px 7px;
+  color: #999;
+  border-radius: 4px;
+}
+#content .pop nav a:hover {
+  color: white;
+  background: black;
+  text-decoration: none;
+}
+#content .pop nav a.selected {
+  border: 1px solid rgba(150, 45, 34, 0.95);
+  background: rgba(188, 56, 42, 0.95);
+  color: white;
+}
 #content a.game-card {
   border: 1px solid rgba(188, 56, 42, 0.35);
   padding: 10px;
