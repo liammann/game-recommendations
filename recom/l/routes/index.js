@@ -35,11 +35,12 @@ return;
     ctx: function (ctx, next) {
       if(localStorage.getItem("userID") === null ){
         localStorage.setItem('userID',"none");
-      }else if(localStorage.getItem("userID") =< 1){
+      }else if(localStorage.getItem("userID") > 0){
         ctx.userID = "&user_id="+localStorage.getItem("userID");
       } else {
         ctx.userID = "";
       }
+      console.log(ctx.userID);
 
       ctx.data = {};
       ctx.recom = {};
@@ -142,8 +143,9 @@ return;
         changeActive(ctx.data.index);
         if (typeof done === 'function') done(ctx.data.index);
       });
-      setSelectedIndex(document.getElementById("logged-in-as"),localStorage.getItem("userID"));
-
+      if(localStorage.getItem("userID") !== "none" ){
+        setSelectedIndex(document.getElementById("logged-in-as"),localStorage.getItem("userID"));
+      }
 
       document.getElementById("logged-in-as").addEventListener("change", (function(){
         localStorage.setItem('userID',this.value);
