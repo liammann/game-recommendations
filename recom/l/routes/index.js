@@ -60,7 +60,7 @@ return;
           }, ctx);
       });
       ctx.data.popular = {};
-      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_month'+ctx.userID, function (content) {
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=past_month'+ctx.userID, function (content) {
 //      get('/l/public/games4.json', function (content) {
           ctx.data.popular.month = JSON.parse(content).games;
           ctx.data.popular.month.forEach(function (element, index) {
@@ -68,7 +68,7 @@ return;
           }, ctx);
       });
 
-      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_year'+ctx.userID, function (content) {
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=past_year'+ctx.userID, function (content) {
 //      get('/l/public/games3.json', function (content) {
           ctx.data.popular.year = JSON.parse(content).games;
           ctx.data.popular.year.forEach(function (element, index) {
@@ -76,7 +76,7 @@ return;
           }, ctx);
       });
 
-      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=prev_day'+ctx.userID, function (content) {
+      get('http://localhost:4000/api/v1/games/recommendations?type=most_popular&time_lapse=past_day'+ctx.userID, function (content) {
 //      get('/l/public/games2.json', function (content) {
           ctx.data.popular.day = JSON.parse(content).games;
           ctx.data.popular.day.forEach(function (element, index) {
